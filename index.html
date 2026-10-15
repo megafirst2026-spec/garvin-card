@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garvin Yeung | Cafe Urasaki</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; margin: 0; padding: 24px; display: flex; justify-content: center; }
-    .card { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 380px; width: 100%; padding: 28px 20px; text-align: center; }
-    .logo { width: 70px; height: 70px; border-radius: 50%; margin-bottom: 12px; }
-    h1 { margin: 8px 0 4px; font-size: 22px; color: #1a1a1a; }
-    .title { color: #666; font-size: 14px; margin-bottom: 20px; }
-    .btn-save { display: block; background: #0070f3; color: #fff; text-decoration: none; padding: 14px; border-radius: 30px; font-weight: bold; font-size: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,112,243,0.3); }
-    .btn-save:hover { background: #005bb5; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: #f4f6f8; margin: 0; padding: 20px 16px; display: flex; justify-content: center; }
+    .card { background: #fff; border-radius: 18px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); max-width: 380px; width: 100%; padding: 28px 20px; text-align: center; box-sizing: border-box; }
+    h1 { margin: 10px 0 4px; font-size: 22px; color: #1a1a1a; font-weight: 600; }
+    .title { color: #666; font-size: 14px; margin-bottom: 22px; }
+    .btn-save { display: block; background: #0070f3; color: #fff; text-decoration: none; padding: 14px; border-radius: 30px; font-weight: bold; font-size: 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,112,243,0.3); border: none; width: 100%; cursor: pointer; box-sizing: border-box; }
+    .btn-save:active { background: #005bb5; }
+    .tip { font-size: 12px; color: #888; margin-bottom: 20px; line-height: 1.4; }
     .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-    .action-btn { background: #f0f2f5; color: #333; text-decoration: none; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 500; }
-    .section-title { font-size: 13px; color: #888; text-align: left; margin: 16px 0 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-    .shop-box { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 10px; text-align: left; font-size: 12px; color: #444; line-height: 1.5; margin-bottom: 8px; }
-    .shop-box b { color: #111; display: block; margin-bottom: 2px; }
+    .action-btn { background: #f0f2f5; color: #333; text-decoration: none; padding: 12px 0; border-radius: 12px; font-size: 14px; font-weight: 500; display: block; }
+    .action-btn:active { background: #e4e6eb; }
+    .section-title { font-size: 13px; color: #888; text-align: left; margin: 18px 0 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+    .shop-box { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 12px; text-align: left; font-size: 13px; color: #444; line-height: 1.5; margin-bottom: 10px; }
+    .shop-box b { color: #111; display: block; margin-bottom: 3px; font-size: 13px; }
   </style>
 </head>
 <body>
@@ -24,14 +25,15 @@
     <h1>Garvin Yeung 楊嘉文</h1>
     <div class="title">Co-founder · Cafe Urasaki</div>
 
-    <a href="/Garvin_Yeung_Cafe_Urasaki_vCard.vcf" class="btn-save" download>📥 儲存至通訊錄</a>
+    <button id="saveBtn" class="btn-save">📥 儲存名片至通訊錄</button>
+    <div class="tip">如點擊後提示下載，請在下載完成後選擇「以通訊錄開啟」</div>
 
     <div class="action-grid">
       <a href="tel:+85262966563" class="action-btn">📞 撥打手機</a>
       <a href="https://wa.me/85262966563" class="action-btn">💬 WhatsApp</a>
     </div>
 
-    <div class="section-title">門店資訊</div>
+    <div class="section-title">Cafe Urasaki 門店地址</div>
     <div class="shop-box">
       <b>📍 啟德 SOGO 店</b>
       九龍啟德協調道12號，雙子匯1期，1樓103號舖
@@ -41,5 +43,33 @@
       九龍廣東道3-27號，海港城海運大廈三階，Kiosk J號舖
     </div>
   </div>
+
+  <script>
+    const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:Yeung;Garvin;;;
+FN:Garvin Yeung 楊嘉文
+ORG:Wise (Nano) Company Limited;Cafe Urasaki
+TITLE:Co-founder
+TEL;TYPE=CELL,VOICE:+852 6296 6563
+TEL;TYPE=WORK,VOICE:+852 6560 3693
+EMAIL;TYPE=WORK,INTERNET:garvin@wise-food.com.hk
+URL:https://cafeurasaki.com
+ADR;TYPE=WORK:;;Rm B, 10/F Ritz Plaza, 122 Austin Road;Tsim Sha Tsui;Kowloon;;Hong Kong
+NOTE:Cafe Urasaki 門店地址:\n啟德SOGO店: 九龍啟德協調道12號,雙子匯1期,1樓103號舖\n尖沙咀海港城店: 九龍廣東道3-27號,海港城海運大廈三階,Kiosk J號舖
+END:VCARD`;
+
+    document.getElementById('saveBtn').addEventListener('click', function() {
+      const blob = new Blob([vcardData], { type: 'text/x-vcard;charset=utf-8;' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.setAttribute('download', 'Garvin_Yeung.vcf');
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+  </script>
 </body>
 </html>

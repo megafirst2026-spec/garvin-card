@@ -1,0 +1,11 @@
+{
+  "headers": [
+    {
+      "source": "/(.*).vcf",
+      "headers": [
+        { "key": "Content-Type", "value": "text/x-vcard; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"garvin.vcf\"" }
+      ]
+    }
+  ]
+}

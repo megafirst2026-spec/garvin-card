@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Yeung;Garvin;;;
+FN:Garvin Yeung 楊嘉文
+ORG:Wise (Nano) Company Limited;Cafe Urasaki
+TITLE:Co-founder
+TEL;TYPE=CELL,VOICE:+852 6296 6563
+TEL;TYPE=WORK,VOICE:+852 6560 3693
+EMAIL;TYPE=WORK,INTERNET:garvin@wise-food.com.hk
+URL:https://cafeurasaki.com
+ADR;TYPE=WORK:;;Rm B, 10/F Ritz Plaza, 122 Austin Road;Tsim Sha Tsui;Kowloon;;Hong Kong
+NOTE:Cafe Urasaki 門店地址:\n尖沙咀海港城店: 九龍廣東道3-27號,海港城海運大廈三階,Kiosk J號舖\n啟德SOGO店: 九龍啟德協調道12號,雙子匯1期,1樓103號舖
+END:VCARD
